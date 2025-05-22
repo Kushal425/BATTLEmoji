@@ -1,12 +1,13 @@
 import './App.css'
 import Background from './components/background'
+import Start from './components/Start'
 
 function App() {
 
   return (
     <div>
       <Background />
-      <h1>Welcome</h1>
+      <Start />
     </div>
   )
 }

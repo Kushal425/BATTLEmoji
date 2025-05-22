@@ -1,5 +1,3 @@
-import React from 'react'
-
 function Background() {
   return (
     <div>
@@ -7,7 +5,6 @@ function Background() {
         autoPlay
         loop
         muted
-        playsInline
         style={{
           position: 'fixed',
           top: 0,
