@@ -1,9 +1,9 @@
-import Footer from "./Footer"
 import "./style.css"
 
-function Start() {
+function Start({state}) {
+
   return (
-    <div className="start">
+    <div className="container">
         <h1 className="title">
             Welcome to BATTLEmoji
         </h1>
@@ -19,10 +19,9 @@ function Start() {
                 <li>Have fun and enjoy the game!</li>
             </ul>
         </div>
-        <button className="start-button" onClick={() => alert('Game Started!')}>
+        <button className="button" onClick={() => state("customize")}>
             Start Game
         </button>
-        <Footer />
     </div>
   )
 }
