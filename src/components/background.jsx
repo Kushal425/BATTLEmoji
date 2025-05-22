@@ -9,10 +9,6 @@ function Background() {
           position: 'fixed',
           top: 0,
           left: 0,
-          minWidth: '100vw',
-          minHeight: '100vh',
-          width: '100vw',
-          height: '100vh',
           objectFit: 'cover',
           zIndex: -1,
         }}
