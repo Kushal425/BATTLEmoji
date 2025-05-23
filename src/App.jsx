@@ -8,7 +8,7 @@ import Game from './components/Game'
 
 function App() {
   const [stage,setStage] = useState("start")
-  const [emojis, setEmojis] = useState({ player1: '🅾️', player2: '🅾️' });
+  const [emojis, setEmojis] = useState({ player1: '', player2: '' });
 
   return (
     <div className='app'>

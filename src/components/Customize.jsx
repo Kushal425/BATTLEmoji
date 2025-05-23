@@ -57,10 +57,11 @@ function Customize({state,emos,setEmos}) {
             </div>
             <div>
                 <label>Emoji :</label>
-                <select style={{backgroundColor: "transparent", fontSize: "2rem"}}
+                <select style={{backgroundColor: "transparent", fontSize: "2rem", color: "#baabd5", textAlign: "center"}}
                     value={emos[`player${p}`]}
                     onChange={(e) => handleEmojiChange(`player${p}`, e.target.value)}
-                >
+                >   
+                    <option value="">--</option>
                     {emojiCategories[categories[`player${p}`]].map((e,i) => (
                         <option value={e}>{e}</option>
                     ))}
