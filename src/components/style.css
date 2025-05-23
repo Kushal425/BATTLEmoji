@@ -100,7 +100,6 @@ select:hover {
     box-shadow: 0 0 3rem #8c81a1;
 }
 
-
 .footer{
     position: fixed;
     bottom: 0;
@@ -112,4 +111,68 @@ select:hover {
     color: #baabd5;
     font-size: 1.5rem;
     box-shadow: 0 -2px 3rem #381a74;
+}
+
+.board-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 4rem;
+    border-radius: 2rem;
+    background-color: #151335;
+    color: #baabd5;
+}
+
+.turn-indicator {
+    font-size: 2rem;
+    margin: 0 0 2rem;
+    color: #baabd5;
+}
+
+.winner {
+    border: 1rem dotted #28a745;
+    padding: 0.5rem 1rem;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.tile {
+    width: 8rem;
+    height: 8rem;
+    text-align: center;
+    align-content: center;
+    background-color: #baabd5c6;
+    border-radius: 1rem;
+    font-size: 5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.filled {
+    background-color: #9879d2;
+    box-shadow: 0 0 1rem #8d62dc;
+    cursor: not-allowed;
+}
+
+.reset-button {
+    margin-top: 2.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #baabd5;
+    color: rgb(21, 19, 53);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+    box-shadow: 0 0 2rem #8352dd;
 }

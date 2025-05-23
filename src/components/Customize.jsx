@@ -4,12 +4,16 @@ import {useState} from "react"
 function Customize({state,emos,setEmos}) {
 
     const emojiCategories = {
-        animals: ['🐶', '🐱', '🐵', '🐰'],
-        food: ['🍕', '🍟', '🍔', '🍩'],
-        sports: ['⚽', '🏀', '🏈', '🎾'],
+        emotions: ['😀', '🤣', '😡', '😱', '😍', '😎', '🤔', '😴', '🤗', '😜'],
+        animals: ['🐶', '🐱', '🐰', '🦊', '🐼', '🐨', '🦁', '🐮', '🐷', '🐵'],
+        food: ['🍕', '🍔', '🍟', '🍖', '🍌', '🍎', '🌶️', '🍍', '🍰', '🍫'],
+        sports: ['⚽️', '🏀', '🏈', '⚾️', '🏐', '🥏', '🎱', '🥊', '🎯', '🎮'],
+        nature: ['🌳', '🌸', '🌼', '🌻', '🌈', '🌊', '🏔️', '🏖️', '🏜️', '🏕️'],
+        vehicles: ['🚗', '🚕', '🚌', '🚎', '🏍️', '🚲', '✈️', '🚀', '⛴️', '🛳️'],
+        original: ['🅾️', '❎']
         };
 
-    const [categories, setCategories] = useState({ player1: 'animals', player2: 'animals' });
+    const [categories, setCategories] = useState({ player1: 'original', player2: 'original' });
     
     const handleCategoryChange = (player, category) => {
         setCategories({ ...categories, [player]: category });
@@ -21,7 +25,10 @@ function Customize({state,emos,setEmos}) {
         };
 
     const selectRandomEmoji = (player) => {
-        const allEmojis = Object.values(emojiCategories[categories[player]]);
+        const allCategories = Object.keys(emojiCategories);
+        const randomCategory = allCategories[Math.floor(Math.random() * allCategories.length)];
+        setCategories({ ...categories, [player]: randomCategory });
+        const allEmojis = Object.values(emojiCategories[randomCategory]);
         const randomEmoji = allEmojis[Math.floor(Math.random() * allEmojis.length)];
         setEmos({ ...emos, [player]: randomEmoji });
         };
@@ -38,7 +45,11 @@ function Customize({state,emos,setEmos}) {
                 <select
                     value={categories[`player${p}`]}
                     onChange={(e) => handleCategoryChange(`player${p}`, e.target.value)}
-                >
+                >   
+                    <option value="original">Original</option>
+                    <option value="emotions">Emotions</option>
+                    <option value="nature">Nature</option>
+                    <option value="vehicles">Vehicles</option>
                     <option value="animals">Animals</option>
                     <option value="food">Food</option>
                     <option value="sports">Sports</option>
