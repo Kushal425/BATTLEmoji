@@ -32,7 +32,18 @@ function Customize({state,emos,setEmos}) {
         const randomEmoji = allEmojis[Math.floor(Math.random() * allEmojis.length)];
         setEmos({ ...emos, [player]: randomEmoji });
         };
-
+    
+    const handleProceed = () => {
+        if (emos.player1 === '' || emos.player2 === '') {
+            alert("Please select emojis for both players.");
+            return;
+        } else if (emos.player1 === emos.player2) {
+            alert("Both players cannot select the same emoji.");
+            return;
+        }
+        state("proceed");
+    };
+    
     return (
     <div className="container">
       <h1 className="title">Select Your Emoji's</h1>
@@ -74,7 +85,7 @@ function Customize({state,emos,setEmos}) {
       ))}
       </div>
       
-      <button className="button" onClick={()=>state("proceed")}>Proceed</button>
+      <button className="button" onClick={handleProceed} >Proceed</button>
     </div>
   )
 }
