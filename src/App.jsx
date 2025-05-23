@@ -8,8 +8,9 @@ import Game from './components/Game'
 
 function App() {
   const [stage,setStage] = useState("start")
-  const [categories, setCategories] = useState({ player1: '', player2: '' });
   const [emojis, setEmojis] = useState({ player1: '', player2: '' });
+
+  stage === "proceed" ? console.log(emojis) : null
 
   return (
     <div className='app'>
@@ -18,8 +19,8 @@ function App() {
         (stage === "start") ? 
         <Start state={setStage} /> : 
         (stage === "customize") ?
-         <Customize state={setStage} emos={emojis} setEmos={setEmojis} categos={categories} setCategos={setCategories} /> :
-          <Game />
+        <Customize state={setStage} emos={emojis} setEmos={setEmojis} /> :
+        <Game />
       }
       <Footer />
     </div>

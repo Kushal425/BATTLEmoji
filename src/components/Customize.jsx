@@ -1,6 +1,7 @@
 import "./style.css"
+import {useState} from "react"
 
-function Customize({state,emos,setEmos,categos,setCategos}) {
+function Customize({state,emos,setEmos}) {
 
     const emojiCategories = {
         animals: ['🐶', '🐱', '🐵', '🐰'],
@@ -8,8 +9,10 @@ function Customize({state,emos,setEmos,categos,setCategos}) {
         sports: ['⚽', '🏀', '🏈', '🎾'],
         };
 
+    const [categories, setCategories] = useState({ player1: 'animals', player2: 'animals' });
+    
     const handleCategoryChange = (player, category) => {
-        setCategos({ ...categos, [player]: category });
+        setCategories({ ...categories, [player]: category });
         setEmos({ ...emos, [player]: '' });
         };
 
@@ -18,7 +21,7 @@ function Customize({state,emos,setEmos,categos,setCategos}) {
         };
 
     const selectRandomEmoji = (player) => {
-        const allEmojis = Object.values(emojiCategories).flat();
+        const allEmojis = Object.values(emojiCategories[categories[player]]);
         const randomEmoji = allEmojis[Math.floor(Math.random() * allEmojis.length)];
         setEmos({ ...emos, [player]: randomEmoji });
         };
@@ -29,31 +32,31 @@ function Customize({state,emos,setEmos,categos,setCategos}) {
       <div className="players">
         {[1, 2].map((p) => (
         <div key={p} className="player-box">
-            <h2 >Player {p}</h2>
+            <div>Player {p}</div>
             <div>
                 <label>Category :</label>
-                <select>
+                <select
+                    value={categories[`player${p}`]}
+                    onChange={(e) => handleCategoryChange(`player${p}`, e.target.value)}
+                >
                     <option value="animals">Animals</option>
                     <option value="food">Food</option>
                     <option value="sports">Sports</option>
-                    <option value="nature">Emotions</option>
                 </select>
             </div>
             <div>
                 <label>Emoji :</label>
-                <select>
-                    <option value="cat">🐱</option>
-                    <option value="dog">🐶</option>
-                    <option value="fish">🐟</option>
-                    <option value="tiger">🐯</option>
-                    <option value="elephant">🐘</option>
-                    <option value="lion">🦁</option>
-                    <option value="monkey">🐒</option>
-                    <option value="panda">🐼</option>
+                <select style={{backgroundColor: "transparent", fontSize: "2rem"}}
+                    value={emos[`player${p}`]}
+                    onChange={(e) => handleEmojiChange(`player${p}`, e.target.value)}
+                >
+                    {emojiCategories[categories[`player${p}`]].map((e,i) => (
+                        <option value={e}>{e}</option>
+                    ))}
                 </select>
             </div>
-            <button className="random-button" onClick={() => selectRandomEmoji(`player${p}`)}>
-            Select Random Emoji
+            <button className="s-button" onClick={() => selectRandomEmoji(`player${p}`)}>
+            Random
             </button>   
         </div>
       ))}

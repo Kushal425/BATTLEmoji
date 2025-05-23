@@ -42,12 +42,45 @@
 .player-box{
     display: flex;
     flex-direction: column;
-    padding: 1rem 4rem;
-    font-size: 1.5rem;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem 4rem;
+    font-size: 2rem;
     background-color: rgb(21, 19, 53);
     color: #baabd5;
     border-radius: 1rem;
     box-shadow: 0 0 3rem #381a74;
+}
+
+select {
+    padding: 0.5rem 1rem;
+    margin: 0 0 0 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #baabd5;
+    color: rgb(21, 19, 53);
+    appearance: none;
+}
+
+select:hover {
+    border-color: #8352dd;
+    box-shadow: 0 0 2rem #8352dd;
+}
+
+.s-button{
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #baabd5;
+    color: rgb(21, 19, 53);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.s-button:hover{
+    box-shadow: 0 0 2rem #8352dd;
 }
 
 .button{
