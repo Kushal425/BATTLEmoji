@@ -210,3 +210,106 @@ select:hover {
 .reset-button:hover {
     box-shadow: 0 0 2rem #8352dd;
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding-top: 4rem;
+    }
+
+    .navbar {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .n-button {
+        font-size: 1rem;
+        padding: 0.3rem 0.8rem;
+        margin: 0 0.5rem;
+    }
+
+    .title {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    .rules {
+        font-size: 1.3rem;
+        padding: 0 0.5rem 0.5rem;
+        margin: 1.5rem 5rem;
+    }
+
+    .rules ul {
+        font-size: 1.3rem;
+    }
+
+    .button {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    .players {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .player-box {
+        padding: 2rem 3rem;
+        font-size: 1.5rem;
+    }
+
+    .footer {
+        display: none;
+    }
+    
+    .board-container {
+        padding: 2rem 2rem 1rem;
+        margin-top: 5rem;
+    }
+
+    .turn-indicator {
+        font-size: 2rem;
+        margin: 0.5rem 0 1.5rem;
+    }
+    
+    .game-board {
+        gap: 0.5rem;
+    }
+
+    .tile {
+        width: 8rem;
+        height: 8rem;
+        font-size: 4rem;
+    }
+
+    .reset-button {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .rules {
+        font-size: 1rem;
+        padding: 0 0.5rem 0.5rem;
+        width: 22rem;
+        margin: 1.5rem 0;
+    }
+
+    .rules ul {
+        font-size: 1.1rem;
+    }
+    
+    .board-container {
+        padding: 1rem;
+        margin-top: 5rem;
+    }
+
+    .tile {
+        width: 7rem;
+        height: 7rem;
+        font-size: 4rem;
+    }
+    
+}
