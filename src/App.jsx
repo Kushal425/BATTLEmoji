@@ -5,6 +5,7 @@ import Start from './components/Start'
 import Customize from './components/Customize'
 import Footer from './components/Footer'
 import Game from './components/Game'
+import Navbar from './components/Navbar'
 
 function App() {
   const [stage,setStage] = useState("start")
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className='app'>
       <Background />
+      <Navbar state={setStage} setEmos={setEmojis} />
       {
         (stage === "start") ? 
         <Start state={setStage} /> : 
