@@ -1,5 +1,12 @@
 import { useState } from 'react';
+import click from '/click.mp3';
+import over from '/gameover.mp3';
 import './style.css';
+
+const audioClick = new Audio(click);
+audioClick.volume = 0.3;
+const audioOver = new Audio(over);
+audioOver.volume = 0.3;
 
 function Game({ p1, p2 }) {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -49,6 +56,7 @@ function Game({ p1, p2 }) {
     }
 
     updatedBoard[index] = currentPlayerEmoji;
+    audioClick.play();
 
     if (currentPlayer === 'Player 1') {
       setPlayer1Positions([...player1Positions, index]);
@@ -60,6 +68,7 @@ function Game({ p1, p2 }) {
 
     if (checkWinner(updatedBoard)) {
       setWinner(currentPlayer);
+      audioOver.play();
       return;
     }
 
