@@ -12,6 +12,7 @@ function Start({state}) {
                 Rules
             </h2>
             <ul>
+                <li>BATTLEmoji is a two-player game where you use emojis to compete against each other.</li>
                 <li>Each player starts by choosing their favorite category.</li>
                 <li>Players then select an emoji from their chosen category.</li>
                 <li>Once both players have selected their emoji, click "Proceed" to start the game.</li>
