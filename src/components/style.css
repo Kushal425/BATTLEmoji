@@ -243,7 +243,7 @@ select:hover {
     .rules {
         font-size: 1.3rem;
         padding: 0 0.5rem 0.5rem;
-        margin: 1.5rem 5rem;
+        margin: 1.5rem 5rem 0;
     }
 
     .rules ul {
@@ -302,7 +302,7 @@ select:hover {
         font-size: 1rem;
         padding: 0 0.5rem 0.5rem;
         width: 22rem;
-        margin: 1.5rem 0;
+        margin: 1.5rem 0 0;
     }
 
     .rules ul {
