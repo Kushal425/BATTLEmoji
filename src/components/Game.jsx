@@ -90,7 +90,7 @@ function Game({ p1, p2 }) {
           {board.map((cell, index) => (
             <div
               key={index}
-              className={`tile ${cell ? 'filled' : ''}`}
+              className={`tile ${cell ? 'filled' : ''} ${winner && cell === (winner === 'Player 1' ? p1 : p2) ? 'highlight' : ''}`}
               onClick={() => handleCellClick(index)}
             >
               {cell}
